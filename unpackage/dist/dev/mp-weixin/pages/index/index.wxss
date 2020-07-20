@@ -1,0 +1,267 @@
+@font-face {font-family: "iconfont";
+  src:
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAKYAAsAAAAABnQAAAJJAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqBAIEPATYCJAMICwYABCAFhG0HLRuyBREFfMl+JMaOkU2mr3QrnxRR4kw8/Lff//aZmfv+fDPEPIo3k6TaCOURxaJlvBEKobD+6ljEK/ne/6kZ9oUOKAv7PPEu/+P+zLxc1/Mal6iABWx61HT6xL3TJlAg853/y3EvWmNQl47FgRToHhhFViSRN4zdoIKHHhPoM88asbfff1xVZKsCcStcPa/OXIriRKvQARws4olGTXfTJzxuvx9/bYpK0mRZ3uEr+y7Z+UMel7tt16maxE0wjjfIWINCHAeGDsrCYWR9oWIRx8oOfmjb2iiOqhPOX5dlDoA5Ov+ZBKXwUaMJHmuqNVjHtJ1Yc3vw/vuIO+/6Bl7Nyg2h794b6emSAYLu2/7BlzOTtB+jML84uHffgIGtpW0fpKFzsQDwO3aCdip/yJsEgn/fe3h2eOv/2l/Alz4fah3tVEFmoe7bHPwjAWFLiUWZIZVQABxO1py7qk8fWqZtzHdW9eQNxUI1yWDpMXdEVi0hF5HQSKPfFh0dVbkDfVYbjvcbR0pRerHKW0MY8UEy5COyEV9yof/QmOaPjpEo0edkjF/Yb1kEsYdQMhpQLwh6mW1hYtFlH9HdRklTUcu8Iu3BC23VLKMDzkgitux31zFbsLRM0GvP4TgusNISUXPlmddDXVvQmyq9TJmwB0ESQwZQXkCgLWa2Hs/E6vNHyLkZSYRoGvFeIbILs4NWpSEgD/KZqOlRXtndOR3GLGCRxQT02jw0Gi3ACp4XIY1VPENgdVDn7SypvFKvnP7uBPTJNCnyoiyfNybLAAAAAA==') format('woff2');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-add:before {
+  content: "\e61e";
+}
+.todo-header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	padding: 0 15px;
+	height: 45px;
+	color: #333333;
+	box-sizing: border-box;
+	font-size: 12px;
+	box-shadow: -1px 1px 5px 0 rgba(0,0,0,0.1);
+	background: #FFFFFF;
+	z-index:10;
+}
+.todo-header__left{
+	width: 100%;
+}
+.todo-header__right{
+	-webkit-flex-shrink: 0;
+	        flex-shrink: 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+.todo-header__right-item{
+	padding: 0 5px;
+}
+.active-tab{
+	color: #279abf;
+}
+.active-text{
+	font-size: 14px;
+	color: #279abf;
+	padding-right: 10px;
+}
+.todo-content{
+	position: relative;
+	padding-top: 45px;
+	padding-bottom: 150px;
+}
+.todo-list{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	position: relative;
+	padding: 15px;
+	margin: 15px;
+	color: #0c3854;
+	font-size: 14px;
+	border-radius: 10px;
+	background: #cfebfd;
+	box-shadow: -1px 1px 5px 1px rgba(0,0,0,0.1),-1px 2px 1px 0 rgba(255,255,255) inset;
+	overflow: hidden;
+}
+.todo-list::after{
+	position: absolute;
+	content: '';
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 5px;
+	background: #91d1e8;
+}
+.todo-list__checkbox{
+	padding-right: 15px;
+}
+.checkbox{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #FFFFFF;
+	box-shadow: 0 0 5px 1px rgba(0,0,0,0.1);
+}
+.todo--finish .checkbox{
+	position: relative;
+	background: #eee;
+}
+.todo--finish .checkbox::after{
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background: #cfebfd;
+	border-radius: 50%;
+	box-shadow: 0 0 2px 0 rgba(0,0,0,0.2) inset;
+}
+.todo--finish .todo-list__content{
+	color: #999999;
+}
+.todo--finish.todo-list:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 40px;
+	right: 10px;
+	height: 2px;
+	margin: auto 0;
+	background: #bdcdd8;
+}
+.todo--finish.todo-list::after{
+	background: #cccccc;
+}
+.create-todo{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	position: fixed;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	width: 50px;
+	height: 50px;
+	margin: 0 auto;
+	border-radius: 50%;
+	background-color: #deeff5;
+	box-shadow: -1px 1px 5px 2px rgba(0,0,0,0.1),-1px 1px 1px 0 rgba(255,255,255) inset;
+}
+.icon-add{
+	font-size: 30px;
+	color: #add8e6;
+}
+.create-content{
+	position: fixed;
+	bottom: 95px;
+	left: 20px;
+	right: 20px;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	opacity: 0;
+	-webkit-transform: scale(0) translateY(200%);
+	        transform: scale(0) translateY(200%);
+}
+.create--show{
+	opacity: 1;
+	-webkit-transform: scale(1) translateY(0);
+	        transform: scale(1) translateY(0);
+}
+.create-content-box{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	padding: 0 0 0 15px;
+	border-radius: 50px;
+	background: #DEEFF5;
+	box-shadow: -1px 1px 5px 2px rgba(0,0,0,0.1),-1px 1px 1px 0 rgba(255,255,255) inset;
+	z-index: 2;
+}
+.create-content-box::after{
+	content: '';
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: -10px;
+	width: 20px;
+	height: 20px;
+	margin: 0 auto;
+	background: #DEEFF5;
+	-webkit-transform: rotate(45deg);
+	        transform: rotate(45deg);
+}
+.create-input{
+	width: 100%;
+	padding-right: 15px;
+	color: #ADD8E6;
+}
+.create-button{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	width: 80px;
+	height: 50px;
+	-webkit-flex-shrink: 0;
+	        flex-shrink: 0;
+	border-radius: 50px;
+	color: #88d4ec;
+	font-size: 14px;
+	box-shadow: -2px 0px 2px 1px rgba(0,0,0,0.1);
+}
+.create-content::after{
+	content: '';
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: -10px;
+	width: 20px;
+	height: 20px;
+	margin: 0 auto;
+	background: #DEEFF5;
+	-webkit-transform: rotate(45deg);
+	        transform: rotate(45deg);
+	box-shadow: -1px 1px 5px 2px rgba(0,0,0,0.1);
+	z-index: -1;
+}
+.default{
+	padding-top: 100px;
+}
+.image-default{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
+.image-default image{
+	width: 100%;
+}
+.default-info{
+	text-align: center;
+	font-size: 14px;
+	color: #CCCCCC;
+}
+.icon-add{
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+	transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.create-todo-active{
+	-webkit-transform: rotate(135deg);
+	        transform: rotate(135deg);
+}
+
